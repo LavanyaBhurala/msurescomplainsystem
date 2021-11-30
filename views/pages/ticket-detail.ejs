@@ -1,0 +1,72 @@
+<html>
+<%- include('../includes/header.ejs', {title: 'Ticket Detail' }) %>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <div class="container">
+    <div class="row p-2">
+      <div class="col-4">
+        <h4>Ticket Details</h4>
+      </div>
+      <div class="col-6"></div>
+      <div class="col-2">
+        <button onclick="javascript:location.href='<%= contextPath%>/ticket/<%= ticket.id%>'" class="btn-success">Edit Details</button>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-12">
+        <table class="table">
+          <tr>
+            <td>Title</td>
+            <td>
+              <%= ticket.title%>
+            </td>
+          </tr>
+          <tr>
+            <td>Desc</td>
+            <td>
+              <%= ticket.desc%>
+            </td>
+          </tr>
+          <tr>
+            <td>Logged By</td>
+            <td>
+              <%= ticket.loggedBy%>
+            </td>
+          </tr>
+          <tr>
+            <td>Assignee</td>
+            <% if (typeof ticket.assignee !="undefined" ) { %>
+            <td>
+              <%= ticket.assignee%>
+            </td>
+            <% } else { %>
+            <td>Not Assigned</td>
+            <% } %>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>
+              <%= ticket.status%>
+            </td>
+          </tr>
+          <tr>
+            <td>Created On</td>
+            <td>
+              <%= ticket.createdOn%>
+            </td>
+          </tr>
+          <tr>
+            <td>Modified On</td>
+            <td>
+              <%= ticket.modifiedOn%>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/scripts.ejs') %>
+</body>
+</html>

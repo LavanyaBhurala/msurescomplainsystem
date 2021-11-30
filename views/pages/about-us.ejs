@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../includes/header.ejs', {title: 'About Us' }) %>
+  <body>
+    <header class="About">
+      <%- include('../includes/navigation.ejs') %>
+    </header>
+    <div class="row">
+      <h2 style="text-align: center">Our Story</h2>
+    </div>
+    <div class="row" style="text-align: left">
+      <div class="col-md-6">
+        <img src="../images/residential_halls.jpg" alt="MSU Logo" />
+      </div>
+
+      <div class="col-md-6" style="text-align: left">
+        <p>
+          Joining a residential college at Murray State is like joining a team.
+          Every Racer who lives on campus will join one of the residential
+          colleges and become a part of that college's tight-knit community.
+          Each college has its own crest, colors and mascot, which are points of
+          pride for every Racer. The community camaraderie and support is plain
+          to see throughout the entirety of Murray State's campus and is evident
+          in every residential college event. Soon, you, too will be sporting
+          your college's colors with pride!
+        </p>
+      </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>

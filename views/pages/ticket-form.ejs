@@ -1,0 +1,29 @@
+<html>
+  <%- include('../includes/header.ejs', {title: 'Ticket Form' }) %>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="container p-5">
+      <div class="row"><h3 style="text-align:center;">Create Ticket</h3></div>
+      <form name="ticket-form" action="ticket" method="POST">
+        <div class="row form-group">
+            <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-10">
+              <input type="text"  name="title" length="100" class="form-control" id="inputTitle" placeholder="Title">
+            </div>
+        </div>
+        <div class="row form-group">
+            <label for="inputTextArea" class="col-sm-2 col-form-label">Desc</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="inputTextArea" col="12" name="desc" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-11"></div>
+            <div class="col-1"><button type="submit" value="Submit" class="btn btn-primary">Submit</button></div>
+        </div> 
+      </form>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/scripts.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "aidesk",
+  "version": "1.0.0",
+  "description": "helpdesk system to aid college students to raise tickets for theeir problems and check their status any time.",
+  "main": "bootstrap.js",
+  "scripts": {
+    "dev": "nodemon boostrap.js",
+    "prod": "node bootstrap.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aidesk",
+    "helpdesk",
+    "ticket",
+    "management",
+    "system",
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "Lavanya Bhurala",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.6",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "formidable": "^2.0.0",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1"
+  }
+}

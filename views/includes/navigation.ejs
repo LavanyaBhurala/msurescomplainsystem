@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <% if(session.name) { %> 
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="javascript: void(0)">Welcome <%= session.name%></a>
+            </li>
+        </ul>
+        <% }%>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="<%= contextPath%>/home">Aidesk</a>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="<%= contextPath%>/ticket">Create Ticket</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<%= contextPath%>/logout">Logout</a>
+        </ul>
+    </div>
+</nav>

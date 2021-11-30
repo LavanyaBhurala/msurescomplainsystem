@@ -1,0 +1,10 @@
+{
+  "app-context": "/aidesk",
+  "app-port": 8080,
+  "db-config": {
+    "host": "localhost",
+    "user": "root",
+    "password": "napster",
+    "database": "aidesk"
+  }
+}

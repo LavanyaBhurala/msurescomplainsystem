@@ -1,0 +1,80 @@
+<html>
+<%- include('../includes/header.ejs', {title: 'Home' }) %>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <% if (typeof ticketId !="undefined" ) { %>
+        <% if (typeof updated !="undefined" ) { %>
+        <h4>Ticket has been updated ID: '<%= ticketId%>'</h4>
+        <% } else { %>
+        <h4>Ticket has been created ID: '<%= ticketId%>'</h4>
+        <% } %>
+        <a href="<%= contextPath%>/ticket/<%= ticketId%>">Check the Ticket Details Here</a>
+        <% } %>
+      </div>
+      <div class="col-10"></div>
+    </div>
+    <% if (typeof tickets !="undefined" ) { %>
+    <div class="row">
+      <div class="col-2"><h3>Tickets</h3></div>
+      <div class="col-10"></div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Desc</th>
+              <th>Status</th>
+              <th>Created On</th>
+              <th>Assignee</th>
+              <th>Modified On</th>
+              <th></th>
+            </tr>
+          </thead>
+          <% for(const ticket of tickets) { %>
+          <tr>
+            <td>
+              <%= ticket.id%>
+            </td>
+            <td>
+              <%= ticket.title%>
+            </td>
+            <td>
+              <%= ticket.desc%>
+            </td>
+            <td>
+              <%= ticket.status%>
+            </td>
+            <td>
+              <%= ticket.createdOn%>
+            </td>
+            <% if (typeof ticket.assignee !="undefined" ) { %>
+            <td>
+              <%= ticket.assignee%>
+            </td>
+            <% } else { %>
+            <td>Not Assigned</td>
+            <% } %>
+            <td>
+              <%= ticket.modifiedOn%>
+            </td>
+            <td>
+              <a href="<%= contextPath%>/ticket/<%= ticket.id%>">View Details</a>
+            </td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/scripts.ejs') %>
+</body>
+
+</html>

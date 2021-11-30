@@ -1,0 +1,73 @@
+<html>
+<%- include('../includes/header.ejs', {title: 'MSU Residential Complaint System' }) %>
+<body class="bg-primary">
+  <div class="bg-image" style="background-image: url('../images/login_university_.jpg'); 100vh;">
+    <h1 style="text-align: center">MSU Residential Complaint System</h1>
+    <div id="layoutAuthentication">
+      <div id="layoutAuthentication_content">
+        <main>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                  <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">
+                      Create Account
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    <% if (typeof message != "undefined") { %>
+                    <h2><%= message%></h2>
+                    <% } %>
+                    <form method="post" action"/login" oninput='password1.setCustomValidity(password1.value != password.value ? "Passwords do not match." : "")'>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="text" name="name" />
+                        <label>Name</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="email" name="email" pattern="^[a-z0-9._%+-]+@murraystate.edu" title="Only @murraystate.edu domain name emails are accepted" />
+                        <label>Email address</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="text" name="mobile" />
+                        <label>Mobile</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="password" name="password" />
+                        <label>Password</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input class="form-control" type="password" name="password1" />
+                        <label>Confirm Password</label>
+                      </div>
+                      <div class="form-floating mb-1">
+                        <select name="type_id" required>
+                          <option value="-1">Select User Type</option>
+                          <option value="1">Student</option>
+                          <option value="2">Worker</option>
+                        </select>
+                      </div>
+                      <div class="mt-4 mb-0">
+                        <div class="d-grid">
+                          <input class="btn btn-primary btn-block" type="submit" value="Register" />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="card-footer text-center py-3">
+                    <div class="small">
+                      <a href="<%= contextPath%>/login">Have an account? Go to login</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/scripts.ejs') %>
+  </div>
+</body>
+</html>
